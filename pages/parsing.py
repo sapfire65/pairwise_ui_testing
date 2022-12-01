@@ -23,12 +23,15 @@ def working_with_table(file_name, tabs_number, string_tabl, column_tabl):
     return list_value
 
 
-car_type = working_with_table('ExLab_task.xlsx', 2, 3, 2)
-body_type = working_with_table('ExLab_task.xlsx', 2, 3, 3)
-car_brand = working_with_table('ExLab_task.xlsx', 2, 3, 4)
-fuel_for_car = working_with_table('ExLab_task.xlsx', 2, 3, 5)
-transmission = working_with_table('ExLab_task.xlsx', 2, 3, 6)
-car_color = working_with_table('ExLab_task.xlsx', 2, 3, 7)
+class ParsingTabs:
+    car_type = working_with_table('ExLab_task.xlsx', 2, 3, 2)
+    body_type = working_with_table('ExLab_task.xlsx', 2, 3, 3)
+    car_brand = working_with_table('ExLab_task.xlsx', 2, 3, 4)
+    fuel_for_car = working_with_table('ExLab_task.xlsx', 2, 3, 5)
+    transmission = working_with_table('ExLab_task.xlsx', 2, 3, 6)
+    car_color = working_with_table('ExLab_task.xlsx', 2, 3, 7)
 
-for i in range(len(car_type)):
-    print(car_type[i], '|', body_type[i], '|', car_brand[i], '|', fuel_for_car[i], '|', transmission[i], '|', car_color[i])
+
+for i in range(len(ParsingTabs.car_type)):
+    print(ParsingTabs.car_type[i], '|', ParsingTabs.body_type[i], '|', ParsingTabs.car_brand[i], '|', ParsingTabs.fuel_for_car[i], '|', ParsingTabs.transmission[i], '|',
+          ParsingTabs.car_color[i])
