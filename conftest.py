@@ -9,7 +9,7 @@ def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default='chrome',
                      help="Choose browser: chrome or firefox or yandex")
     parser.addoption('--width_window', action='store', default='1920')
-    parser.addoption('--height_window', action='store', default='700')
+    parser.addoption('--height_window', action='store', default='900')
 
     parser.addoption('--language', action='store', default='en',
                      help="Choose language: 'ru' or 'en'")
@@ -91,4 +91,6 @@ def browser(request):
 '''
  
 pytest -v -s  --tb=line --reruns 1  --browser_name=chrome --width_window=1024 --height_window=768
---language=ru --headless=true   test_product_page.py
+--language=ru --headless=true   test_product_page.py 
+
+'''

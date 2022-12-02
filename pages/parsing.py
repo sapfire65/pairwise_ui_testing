@@ -2,8 +2,8 @@ from openpyxl import load_workbook, Workbook
 from openpyxl.styles import Font, Alignment, PatternFill
 from os.path import join, abspath
 
-
 def working_with_table(file_name, tabs_number, string_tabl, column_tabl):
+    # excel файл должен быть в этой же директории
     add_files = abspath(join('.', file_name))
     # Настраиваем опции документа
     file_option = load_workbook(filename=add_files, data_only=True, read_only=True)
@@ -22,16 +22,15 @@ def working_with_table(file_name, tabs_number, string_tabl, column_tabl):
         string_tabl += 1
     return list_value
 
+'''Списки входных данных'''
+class ListParsingTabs:
+    car_type = working_with_table('ExLab_task.xlsx', 2, 3, 2)       # тип автомобиля
+    body_type = working_with_table('ExLab_task.xlsx', 2, 3, 3)      # тип кузова
+    car_brand = working_with_table('ExLab_task.xlsx', 2, 3, 4)      # марка
+    fuel_for_car = working_with_table('ExLab_task.xlsx', 2, 3, 5)   # тип топлива
+    transmission = working_with_table('ExLab_task.xlsx', 2, 3, 6)   # тип коробки передач
+    car_color = working_with_table('ExLab_task.xlsx', 2, 3, 7)      # цвет машины
 
-class ParsingTabs:
-    car_type = working_with_table('ExLab_task.xlsx', 2, 3, 2)
-    body_type = working_with_table('ExLab_task.xlsx', 2, 3, 3)
-    car_brand = working_with_table('ExLab_task.xlsx', 2, 3, 4)
-    fuel_for_car = working_with_table('ExLab_task.xlsx', 2, 3, 5)
-    transmission = working_with_table('ExLab_task.xlsx', 2, 3, 6)
-    car_color = working_with_table('ExLab_task.xlsx', 2, 3, 7)
+print(ListParsingTabs.car_type)
 
 
-for i in range(len(ParsingTabs.car_type)):
-    print(ParsingTabs.car_type[i], '|', ParsingTabs.body_type[i], '|', ParsingTabs.car_brand[i], '|', ParsingTabs.fuel_for_car[i], '|', ParsingTabs.transmission[i], '|',
-          ParsingTabs.car_color[i])
