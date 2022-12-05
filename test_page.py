@@ -1,10 +1,9 @@
 import time
 import pytest
-from .pages.main_page import MainPage
-from .pages.login_page import LoginPage
-from .pages.base_page import BasePage
+from pages.test_p import TestMyPage
 
-
+def test_1(self, browser):
+    TestMyPage.test_open_site(self, browser)
 
 
 
@@ -20,7 +19,7 @@ from .pages.base_page import BasePage
 #     # Комбинирование обращений к разным страницам.
 #     def test_guest_can_go_to_login_page(self, browser):
 #         link = "http://selenium1py.pythonanywhere.com/"
-#         page = MainPage(browser, link)   # Открываем Page Object - 'MainPage', передаем в конструктор экземпляр драйвера и url адрес
+#         page = MainPage(browser, link)   # Открываем - 'MainPage', передаем в конструктор экземпляр драйвера и url адрес
 #         page.open()                      # открываем link
 #         page.go_to_login_page()          # переходим на страницу логина
 #         login_page = LoginPage(browser, browser.current_url) # Открываем Page Object - 'LoginPage', передаем в конструктор экземпляр драйвера и url адрес

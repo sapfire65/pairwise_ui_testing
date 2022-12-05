@@ -31,6 +31,16 @@ class ListParsingTabs:
     transmission = working_with_table('ExLab_task.xlsx', 2, 3, 6)   # тип коробки передач
     car_color = working_with_table('ExLab_task.xlsx', 2, 3, 7)      # цвет машины
 
-print(ListParsingTabs.car_type)
+    @staticmethod
+    def dic_list():
+        dic = list(zip(ListParsingTabs.car_type,
+                       ListParsingTabs.body_type,
+                       ListParsingTabs.car_brand,
+                       ListParsingTabs.fuel_for_car,
+                       ListParsingTabs.transmission,
+                       ListParsingTabs.car_color))
+        return dic
+
+# print(ListParsingTabs.car_type)
 
 
