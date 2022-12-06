@@ -1,7 +1,10 @@
 from selenium.webdriver.common.by import By
 
-class BasePageLocators:
-    pass
+class Locators:
+    AGREE_TO_ACCEPT_COOKIES = '//button[@id="onetrust-accept-btn-handler"]'
+
+
+
 
 
 

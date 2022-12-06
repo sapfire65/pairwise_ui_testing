@@ -1,7 +1,6 @@
 import math
 import time
 from selenium import webdriver
-from locators import BasePageLocators
 from selenium.webdriver import Remote as RemoteWebDriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
@@ -45,8 +44,12 @@ class BasePage:
             # Скролим до элемента
             position = browser.find_element(By.XPATH, what)
             browser.execute_script("return arguments[0].scrollIntoView();", position)
-            time.sleep(1)
+            time.sleep(0.9)
         except NoSuchElementException:
+            print(f'Элемент не найден')
+            return False
+        except TimeoutException:
+            print(f'Элемент не виден')
             return False
         return True
 
