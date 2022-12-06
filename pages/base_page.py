@@ -1,6 +1,10 @@
 import math
 import time
+import logging
+
+import pytest
 from selenium import webdriver
+from locators import Locators
 from selenium.webdriver import Remote as RemoteWebDriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
@@ -22,15 +26,29 @@ class BasePage:
 
     def click(self, locator):
         try:
-           WebDriverWait(self, 20).until(EC.element_to_be_clickable((By.XPATH, locator))).click()
+           WebDriverWait(self, 5).until(EC.element_to_be_clickable((By.XPATH, locator))).click()
 
         except TimeoutException:
             return False
         return True
 
+
+    def status_search(self, locator_found):
+        try:
+            WebDriverWait(self, 5).until(EC.visibility_of_element_located((By.XPATH, locator_found)))
+
+        except TimeoutException:
+            return False
+        return True
+
+
+
+
+
+
     def element_located(self, what):
         try:
-            WebDriverWait(self, 20).until(EC.presence_of_element_located((By.XPATH, what)))
+            WebDriverWait(self, 10).until(EC.presence_of_element_located((By.XPATH, what)))
 
         except TimeoutException:
             return False
